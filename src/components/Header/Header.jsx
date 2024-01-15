@@ -29,7 +29,7 @@ const Header = () => {
         </div>
 
         <div
-          className={`lg:hidden absolute bg-gray-50 w-3/4 h-screen pt-20 top-0 right-0 transform shadow-lg z-40 transition-transform  ${menuOpen ? 'translate-x-0' : 'translate-x-full'
+          className={`lg:hidden absolute bg-gray-50 w-3/4 min-h-screen  pt-20 top-0 right-0 shadow-lg z-40  ${menuOpen ? 'block' : 'hidden'
             }`}
         >
 
