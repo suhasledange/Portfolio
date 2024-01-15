@@ -23,8 +23,9 @@
     overflow-x:hidden ;
   }
 
-  @layer base {
-  html {
-    font-family: "Proxima Nova", system-ui, sans-serif;
+  body {
+    font-family: "Roboto Slab", serif;
   }
-}
+  .custom-font {
+    font-family: "Playfair Display", sans-serif;
+  }

@@ -4,6 +4,7 @@ import { Footer, Footer1, Header } from "./components";
 function App() {
   return (
     <>
+       
       <Header/> 
       <main>
       <Outlet/>

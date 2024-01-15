@@ -5,7 +5,6 @@ const Contact = () => {
   return (
     <Container>
     <div className='h-screen'>
-      contact
     </div>
     </Container>
   )

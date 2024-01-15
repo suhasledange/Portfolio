@@ -9,9 +9,9 @@ const Footer = () => {
 
   const FootLink = [
     { logo: <FaGithub/>, href: 'https://github.com/suhasledange' },
-    { logo: <FaXTwitter/>, href: 'https://github.com/suhasledange' },
+    { logo: <FaXTwitter/>, href: 'https://x.com/suhas_ledange' },
     { logo: <FaLinkedin />, href: 'https://in.linkedin.com/in/suhas-ledange-4a0533206' },
-    { logo:<FaInstagram/>, href: 'https://in.linkedin.com/in/suhas-ledange-4a0533206' },
+    { logo:<FaInstagram/>, href: 'https://www.instagram.com/suhasledange/' },
     { logo: <FaYoutube/>, href: 'https://www.youtube.com/channel/UC1ynsuU6XPZ2iWw1Gf9SHlQ' },
 
 
