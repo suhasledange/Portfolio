@@ -1,12 +1,13 @@
 import React from 'react'
 import { Container } from '../../components'
+import Cards from '../Cards/Cards'
 
 const Work = () => {
   return (
     
     <Container>
         <div >
-      work
+              <Cards/>
        </div>
     </Container>
   )
