@@ -4,7 +4,7 @@ import { Container } from '../../components'
 const About = () => {
   return (
     <Container>
-        <div>
+        <div className='h-screen'>
             About
         </div>
     </Container>

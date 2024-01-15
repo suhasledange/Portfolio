@@ -4,7 +4,7 @@ import { Container } from '../../components'
 const Contact = () => {
   return (
     <Container>
-    <div>
+    <div className='h-screen'>
       contact
     </div>
     </Container>
