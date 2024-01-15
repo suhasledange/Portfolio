@@ -4,7 +4,7 @@ import Typed from 'typed.js';
 import { IoIosArrowDown } from "react-icons/io";
 import { CardData } from '../../constant';
 import { Link as ScrollLink } from 'react-scroll';
-import { blob, favicon, male } from '../../assets';
+import { blob, favicon, male, pdf } from '../../assets';
 
 const Work = () => {
 
@@ -28,7 +28,7 @@ const Work = () => {
   return (
 
     <Container>
-      <section className='h-[37rem] mb-10 flex justify-between md:mx-0 mx-4 flex-col'>
+      <section className='h-[37rem] mb-10 flex justify-between md:mx-0 mx-4 flex-col flex-grow'>
 
         <div className='flex w-full justify-between items-center h-full'>
 
@@ -46,7 +46,7 @@ const Work = () => {
             </div>
 
             <div className=''>
-              <a href='../../assets/SuhasLedangeResume.pdf' download="SuhasLedangeResume.pdf" className='text-2xl cursor-pointer hover:text-gray-100 font-medium border-2 hover:bg-purple-700 border-purple-700 text-purple-700 hover:shadow-lg hover:bg-transparent px-5 py-2 duration-200 '>Resume</a>
+              <a href={pdf} download="SuhasLedangeResume.pdf" className='text-2xl cursor-pointer hover:text-gray-100 font-medium border-2 hover:bg-purple-700 border-purple-700 text-purple-700 hover:shadow-lg hover:bg-transparent px-5 py-2 duration-200 '>Resume</a>
             </div>
           </div>
 

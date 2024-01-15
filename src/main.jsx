@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
-import { About, Contact, Resume, Work } from './pages/index.js'
+import { About, Contact, Work } from './pages/index.js'
 
 
 
@@ -24,10 +24,6 @@ const router = createBrowserRouter([
         path:'contact',
         element:<Contact/>
       },
-      {
-        path:'resume',
-        element:<Resume/>
-      }
     ]
   }
 ])

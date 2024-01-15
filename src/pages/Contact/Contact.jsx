@@ -4,7 +4,7 @@ import { Container } from '../../components'
 const Contact = () => {
   return (
     <Container>
-    <div className='h-screen flex items-center justify-center'>
+    <div className='flex items-center flex-grow justify-center'>
       <h1>In Progress...</h1>
     </div>
     </Container>

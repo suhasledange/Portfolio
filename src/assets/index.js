@@ -6,4 +6,5 @@ import blob from './blob.svg'
 import favicon from './favicon.svg'
 import male from './male_avatar.svg'
 import aboutme from './aboutMe.svg'
-export {AMS,Notes,Portfolio,Best,blob,favicon,male,aboutme}
+import pdf from './SuhasLedangeResume.pdf'
+export {AMS,Notes,Portfolio,Best,blob,favicon,male,aboutme,pdf}

@@ -5,7 +5,7 @@ import { aboutme } from '../../assets'
 const About = () => {
   return (
     <Container>
-        <div className='mt-10 flex flex-col items-center mb-10'>
+        <div className='mt-10 flex flex-col flex-grow items-center mb-10'>
             <div className=' w-[30rem]'>
                   <img className='w-full full' src={aboutme}/>
             </div>
