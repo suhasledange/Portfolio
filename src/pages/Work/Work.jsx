@@ -28,7 +28,7 @@ const Work = () => {
   return (
 
     <Container>
-      <section className='h-[35rem] md:h-[37rem] mb-10 flex justify-between mx-4 flex-col flex-grow'>
+      <section className='h-[35rem] md:h-[37rem] mb-10 flex justify-between mx-4 flex-col flex-grow '>
 
         <div className='flex w-full justify-between items-center h-full'>
 
