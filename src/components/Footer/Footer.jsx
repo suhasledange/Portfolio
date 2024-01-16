@@ -18,7 +18,7 @@ const Footer = () => {
   ]
 
   return (
-    <section className='z-10 sticky bottom-0 md:fixed md:left-0 md:bottom-1/3 bg-gray-100 md:drop-shadow-xl rounded-r-lg md:w-auto w-full'>
+    <section className='z-10 bottom-0 md:fixed md:left-0 md:bottom-1/3 bg-gray-100 md:drop-shadow-xl rounded-r-lg md:w-auto w-full'>
 
       <div className='w-full'>
         <ul className='md:py-4 py-7 px-4 md:space-y-5 text-purple-800 text-2xl flex md:gap-0 gap-6 md:flex-col md:items-center justify-center'>
