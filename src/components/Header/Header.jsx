@@ -3,26 +3,34 @@ import { NavLink } from 'react-router-dom';
 import { Navlinks } from '../../constant';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
-
+import { MdDarkMode } from "react-icons/md";
+import { MdLightMode } from "react-icons/md";
+import useTheme from '../../context/theme';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const {themeMode,lightTheme,darkTheme} = useTheme()
+  const themeToggle =()=>{
+      themeMode === 'light' ? darkTheme() : lightTheme()
+ }
+
 
   const handleToggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
   return (
-    <div className='w-full bg-gray-50 md:shadow-md shadow-sm sticky top-0 z-10'>
+    <div className='w-full bg-gray-50 dark:bg-gray-800 md:shadow-md shadow-sm dark:drop-shadow-md sticky top-0 z-10'>
       <div className='flex justify-between items-center mx-auto max-w-screen-lg h-[4.5rem]'>
         <div>
-          <h1 className='md:ml-0 ml-3 text-purple-700 font-bold text-2xl'>Suhas Ledange</h1>
+          <h1 className='md:ml-0 ml-3 dark:text-purple-100 text-purple-700 font-bold text-2xl'>Suhas Ledange</h1>
         </div>
 
         <div className='lg:hidden z-50'>
           <button
             onClick={handleToggleMenu}
-            className=' mr-2 text-2xl text-purple-700 p-2 focus:outline-none'
+            className=' mr-2 text-2xl dark:text-purple-100 text-purple-700 p-2 focus:outline-none'
           >
             {menuOpen ? <IoMdClose className='text-3xl' /> : <GiHamburgerMenu />}
           </button>
@@ -47,6 +55,7 @@ const Header = () => {
                 {item.text}
               </NavLink>
             ))}
+           
           </ul>
         </div>
 
@@ -57,14 +66,14 @@ const Header = () => {
                 key={item.text}
                 to={item.link}
                 className={({ isActive }) =>
-                  `flex items-center h-full px-6 text-purple-700 font-medium ${isActive ? 'text-white bg-purple-700' : ''
+                  `flex items-center h-full px-6 dark:text-purple-100 text-purple-700 font-medium ${isActive ? 'text-white bg-purple-700' : ''
                   }`
                 }
               >
                 {item.text}
               </NavLink>
             ))}
-
+              <li onClick={themeToggle} className='hover:animate-pulse text-2xl cursor-pointer'>{themeMode === 'light' ? <MdDarkMode/> :<MdLightMode className='text-purple-100 '/> } </li>
           </ul>
         </div>
       </div>

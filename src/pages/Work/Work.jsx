@@ -41,12 +41,12 @@ const Work = () => {
                 <span className='text-purple-600 font-semibold text-3xl md:text-4xl cursor-none' id="typed-text"></span>
               </div>
               <div className='pt-2 md:w-2/4'>
-                <p className='text-md md:text-lg font-normal text-gray-600'>I'm a passionate web developer specializing in React, where I bring creative and dynamic ideas to life through clean and efficient code and Beyond coding, I'm also a content creator on YouTube</p>
+                <p className='text-md md:text-lg font-normal dark:text-gray-400 text-gray-600'>I'm a passionate web developer specializing in React, where I bring creative and dynamic ideas to life through clean and efficient code and Beyond coding, I'm also a content creator on YouTube</p>
               </div>
             </div>
 
             <div className=''>
-              <a href={pdf} download="SuhasLedangeResume.pdf" className='text-xl md:text-2xl cursor-pointer hover:text-gray-100 font-medium border-2 hover:bg-purple-700 border-purple-700 text-purple-700 hover:shadow-lg px-5 py-2 duration-200 '>Resume</a>
+              <a href={pdf} download="SuhasLedangeResume.pdf" className='text-xl md:text-2xl cursor-pointer hover:text-gray-100 font-medium border-2 hover:bg-purple-700 border-purple-700 text-purple-700 hover:shadow-lg px-5 py-2 duration-200 dark:bg-purple-700 dark:text-gray-100 dark:hover:bg-transparent '>Resume</a>
             </div>
           </div>
 

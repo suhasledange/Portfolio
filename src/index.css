@@ -26,6 +26,16 @@
   body {
     font-family: "Roboto Slab", serif;
   }
+  
   .custom-font {
     font-family: "Playfair Display", sans-serif;
+  }
+  .light {
+    background-color: #ffffff;
+    color: #333333;
+  }
+  
+  .dark {
+    background-color: #222c39;
+    color: #ffffff;
   }
