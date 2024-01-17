@@ -46,7 +46,7 @@ const Work = () => {
             </div>
 
             <div className=''>
-              <a href={pdf} download="SuhasLedangeResume.pdf" className='text-xl md:text-2xl cursor-pointer hover:text-gray-100 font-medium border-2 hover:bg-purple-700 border-purple-700 text-purple-700 hover:shadow-lg hover:bg-transparent px-5 py-2 duration-200 '>Resume</a>
+              <a href={pdf} download="SuhasLedangeResume.pdf" className='text-xl md:text-2xl cursor-pointer hover:text-gray-100 font-medium border-2 hover:bg-purple-700 border-purple-700 text-purple-700 hover:shadow-lg px-5 py-2 duration-200 '>Resume</a>
             </div>
           </div>
 
