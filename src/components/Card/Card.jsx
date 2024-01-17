@@ -11,7 +11,7 @@ const Card = ({heading,TechStack,Img,para,git,live,liveText,year}) => {
       </div>
 
     <div className='p-3 md:p-5'>
-      <div className=' hover:scale-105 duration-300 hover:shadow-lg rounded-lg w-full md:w-[90%] mx-auto h-[17rem] py-5 overflow-hidden'>
+      <div className=' hover:scale-105 duration-300 hover:shadow-lg hover:drop-shadow-xl rounded-lg w-full md:w-[90%] mx-auto h-[17rem] py-5 overflow-hidden'>
         <img className='dark:brightness-75 dark:contrast-125 w-full h-full bg-cover object-contain rounded-lg ' src={Img} alt={heading} />
       </div>
       <div className='space-y-3 mt-4'>
@@ -38,11 +38,11 @@ const Card = ({heading,TechStack,Img,para,git,live,liveText,year}) => {
       </a>
       <a
         className='text-lg duration-200 text-purple-600 hover:text-purple-800 font-medium hover:underline underline-offset-2 flex items-center gap-1'
-        href={git}
+        href={live}
         target='_blank'
         rel='noopener noreferrer'
       >
-        <IoIosOpen /> Live
+        <IoIosOpen /> {liveText}
       </a>
     </div>
   
