@@ -48,14 +48,14 @@ const Header = () => {
                 to={item.link}
                 onClick={() => setMenuOpen(false)}
                 className={({ isActive }) =>
-                  `flex items-center h-full px-4 dark:text-gray-300 text-purple-700 font-medium text-md ${isActive ? 'text-gray-600' : 'text-purple-800'
+                  `flex items-center mt-5 h-full px-4 font-medium text-md ${isActive ? 'text-purple-700' : 'text-gray-500 '
                   }`
                 }
               >
                 {item.text}
               </NavLink>
             ))}
-            <li onClick={themeToggle} className='hover:animate-pulse text-2xl cursor-pointer'>{themeMode === 'light' ? <MdDarkMode/> :<MdLightMode className='text-purple-100 '/> } </li>
+            <li onClick={themeToggle} className='mt-20 hover:animate-pulse text-2xl cursor-pointer'>{themeMode === 'light' ? <MdDarkMode/> :<MdLightMode className='text-purple-100 '/> } </li>
           </ul>
         </div>
 
