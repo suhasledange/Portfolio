@@ -11,8 +11,8 @@ const Card = ({heading,TechStack,Img,para,git,live,liveText,year}) => {
       </div>
 
     <div className='p-3 md:p-5'>
-      <div className=' hover:scale-105 duration-300 hover:shadow-lg hover:drop-shadow-xl rounded-lg w-full md:w-[90%] mx-auto h-[17rem] py-5 overflow-hidden'>
-        <img className='dark:brightness-75 dark:contrast-125 w-full h-full bg-cover object-contain rounded-lg ' src={Img} alt={heading} />
+      <div className=' rounded-lg w-full md:w-[90%] mx-auto h-[17rem] py-5 overflow-hidden'>
+        <img className='hover:scale-105 duration-300 dark:brightness-75 dark:contrast-125 w-full h-full bg-cover object-contain rounded-lg ' src={Img} alt={heading} />
       </div>
       <div className='space-y-3 mt-4'>
         <h1 className='text-xl dark:text-gray-200 text-gray-800 font-medium'>
