@@ -27,20 +27,24 @@ const Header = () => {
           <h1 className='md:ml-0 ml-3 dark:text-purple-100 text-purple-700 font-bold text-2xl'>Suhas Ledange</h1>
         </div>
 
+        
         <div className='lg:hidden z-50'>
           <button
             onClick={handleToggleMenu}
             className=' mr-2 text-2xl dark:text-purple-100 text-purple-700 p-2 focus:outline-none'
           >
-            {menuOpen ? <IoMdClose className='text-3xl' /> : <GiHamburgerMenu />}
+            {menuOpen ? <IoMdClose className='text-3xl absolute top-[1.4rem] right-4' /> : <GiHamburgerMenu />}
           </button>
         </div>
 
+      <div className={` ${menuOpen ? 'block' : 'hidden'
+            }`}>
+     
+     <div className='absolute top-0 left-0 bg-trasparent backdrop-blur-[2px] w-full min-h-screen' onClick={handleToggleMenu}></div>
         <div
-          className={`lg:hidden absolute bg-gray-50 dark:bg-gray-800 w-3/4 min-h-screen  pt-20 top-0 right-0 shadow-lg z-40  ${menuOpen ? 'block' : 'hidden'
-            }`}
+          className={`lg:hidden absolute bg-gray-50 dark:bg-gray-800 w-2/4 min-h-screen  pt-20 top-0 right-0 shadow-lg z-40 `}
         >
-
+          
           <ul className=' tracking-wider text-lg flex flex-col gap-5 items-center pt-4'>
             {Navlinks.map((item) => (
               <NavLink
@@ -57,6 +61,8 @@ const Header = () => {
             ))}
             <li onClick={themeToggle} className='mt-20 hover:animate-pulse text-2xl cursor-pointer'>{themeMode === 'light' ? <MdDarkMode/> :<MdLightMode className='text-purple-100 '/> } </li>
           </ul>
+        </div>
+
         </div>
 
         <div className={`lg:flex h-full hidden`}>
