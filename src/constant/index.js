@@ -1,5 +1,7 @@
 
 import { AMS,Portfolio,Notes, Best } from "../assets"
+
+
 export const Navlinks =[
     {text:"Work",link:'/'},
     {text:"About",link:'/about'},
@@ -16,6 +18,6 @@ export const Navlinks =[
 
     {year:2023,head:"iNoteBook",TechStack:"MERN Stack",img:Notes,para:"iNoteBook is a Web Application where user can Create an account using email and can login on the website.Stores all personal notes and can update as well as delete the notes.",gitLink:"https://github.com/suhasledange/inotebook",liveLink:"#",liveText:"Coming Soon..."},
     
-
   ]
+
 

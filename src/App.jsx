@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 function App() {
   
-  const initialThemeMode = localStorage.getItem('themeMode') || 'dark';
+  const initialThemeMode = localStorage.getItem('themeMode') || 'light';
   const [themeMode, setThemeMode] = useState(initialThemeMode);
 
   const lightTheme=()=>{
