@@ -40,7 +40,7 @@ const Header = () => {
       <div className={` ${menuOpen ? 'block' : 'hidden'
             }`}>
      
-     <div className='absolute top-0 left-0 bg-trasparent backdrop-blur-[2px] w-full min-h-screen' onClick={handleToggleMenu}></div>
+     <div className='absolute top-0 left-0 bg-black opacity-30 w-full h-screen' onClick={handleToggleMenu}></div>
         <div
           className={`lg:hidden absolute bg-gray-50 dark:bg-gray-800 w-2/4 min-h-screen  pt-20 top-0 right-0 shadow-lg z-40 `}
         >
