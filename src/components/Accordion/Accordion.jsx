@@ -18,11 +18,11 @@ const Accordion = ({icon,skill,skills}) => {
         </div>
         {
            isActive && skills.map(data=>(
-                <div key={data.name} className='dark:bg-purple-600 bg-purple-200 mb-1 p-3 dark:text-gray-50 text-gray-600'>
+                <div key={data.name} className='dark:bg-purple-600 bg-purple-200 mb-1 p-3 dark:text-gray-50 text-gray-600 hover:bg-purple-100 duration-200 dark:hover:bg-purple-500'>
                 <h2>{data.name}</h2> 
                 <div className='flex items-center justify-between space-x-4'>          
                 <div className='w-full dark:bg-purple-700 bg-purple-400  h-3'>
-                    <div style={{ width: `${data.percentage}%`}} className={`bg-purple-700 dark:bg-purple-800 h-full`}></div>
+                    <div style={{ width: `${data.percentage}%`}} className={`bg-purple-700 dark:bg-purple-900 h-full`}></div>
                 </div>
                         <span>{data.percentage}%</span>
                 </div>
