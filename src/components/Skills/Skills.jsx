@@ -8,7 +8,7 @@ const Skills = () => {
 
     const skildata =[
         { skill:"UI/UX Design",skills:[
-            {name:"Figma",percentage:92},
+            {name:"Figma",percentage:80},
             {name:"Adobe Photoshop",percentage:76},
         ],
         icon:<FaPencilRuler />},
