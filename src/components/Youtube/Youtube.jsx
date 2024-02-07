@@ -24,7 +24,7 @@ const Youtube = () => {
                 allVideo.length ?
                  allVideo.map(item=>(
                     <YoutubeCard key={Math.random()} title={item.snippet.title} link={item.Videolink}/>
-                )) :"No Video Found"
+                )) : <h1 className='text-red-700'>Api Limit Reached</h1>
                  }
         </div>
             }
