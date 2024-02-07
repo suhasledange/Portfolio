@@ -25,9 +25,7 @@ function App() {
     <ThemeProvider value={{themeMode,lightTheme,darkTheme}}>
       <Header/> 
       <main>  
-      
       <Outlet/>
-      
       </main>
       <Footer/>
       <Footer1/>

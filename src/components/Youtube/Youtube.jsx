@@ -8,25 +8,26 @@ const Youtube = () => {
  
     const [allVideo,setAllVideo] = useState([])
 
-    const res = fetchFromYoutube()
-    res.then(data=>(
-        setAllVideo(data)
-    ))
-
+    useEffect(()=>{
+            const res = fetchFromYoutube()
+            res.then(data=>(
+                setAllVideo(data)
+            ))
+    },[])
 
   return (
     <div className='mx-auto'>
           <h1 className='text-center font-bold text-purple-700 mb-20 text-2xl'>Youtube Videos</h1>
-
+        {
         <div className='flex items-center flex-wrap justify-center'>
-
-            {
+                { 
+                allVideo.length ?
                  allVideo.map(item=>(
                     <YoutubeCard key={Math.random()} title={item.snippet.title} link={item.Videolink}/>
-                ))
-            }
+                )) :"No Video Found"
+                 }
         </div>
-
+            }
       </div>
   )
 }
