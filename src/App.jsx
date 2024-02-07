@@ -23,10 +23,11 @@ function App() {
 
   return (
     <ThemeProvider value={{themeMode,lightTheme,darkTheme}}>
-       
       <Header/> 
-      <main>
+      <main>  
+      
       <Outlet/>
+      
       </main>
       <Footer/>
       <Footer1/>

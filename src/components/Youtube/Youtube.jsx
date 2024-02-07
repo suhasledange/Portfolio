@@ -1,26 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import conf from '../../conf/conf'
 import YoutubeCard from './YoutubeCard'
 import { Ylogo } from '../../assets'
+import { fetchFromYoutube } from '../../utils/api'
 
 const Youtube = () => {
 
-    const fetchurl = `https://www.googleapis.com/youtube/v3/search?key=${conf.API}&channelId=${conf.ID}&part=snippet,id&maxResults=25`
-
+ 
     const [allVideo,setAllVideo] = useState([])
 
-    useEffect(()=>{
-        fetch(fetchurl)
-        .then(res => res.json())
-        .then(data =>
-            {
-                const result = data.items.map(doc=>({
-                    ...doc,
-                    Videolink:"https://www.youtube.com/embed/"+doc.id.videoId
-                }))
-                setAllVideo(result);
-            })
-    },[])
+    const res = fetchFromYoutube()
+    res.then(data=>(
+        setAllVideo(data)
+    ))
+
 
   return (
     <div className='mx-auto'>
@@ -29,7 +21,7 @@ const Youtube = () => {
         <div className='flex items-center flex-wrap justify-center'>
 
             {
-                allVideo.map(item=>(
+                 allVideo.map(item=>(
                     <YoutubeCard key={Math.random()} title={item.snippet.title} link={item.Videolink}/>
                 ))
             }

@@ -1,48 +1,56 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
-import { About, Contact, Work } from './pages/index.js'
-
-
+import React, { useState, useEffect } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { About, Contact, Work } from './pages/index.js';
+import App from './App.jsx';
+import { Loader } from './components/index.js';
 
 const router = createBrowserRouter([
   {
-    path:'/',
-    element:<App/>,
-    children:[
+    path: '/',
+    element: <App />,
+    children: [
       {
-        path:'',
-        element:<Work/>
+        path: '',
+        element: <Work />,
       },
       {
-        path:'about',
-        element:<About/>
+        path: 'about',
+        element: <About />,
       },
       {
-        path:'contact',
-        element:<Contact/>
+        path: 'contact',
+        element: <Contact />,
       },
-    ]
-  }
-])
+    ],
+  },
+]);
 
 
-// const router = createBrowserRouter(
-//   createRoutesFromElements(
-//     <Route path='/' element={<App/>}>
-//         <Route path='' element={<Work/>}/>
-//         <Route path='about' element={<About/>}/>
-//         <Route path='contact' element={<Contact/>}/>
-//         <Route path='Resume' element={<Resume/>}/>
-//     </Route>
-//   )
-// )
+const RootComponent = () => {
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+   
+    const fetchData = async () => {
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      setLoading(false);
+    };
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <RouterProvider router={router}/>
-  </React.StrictMode>,
-)
+    fetchData();
+  }, []);
+
+  return (
+    <React.StrictMode>
+      {loading ? (
+        <Loader />
+      ) : (
+        <RouterProvider router={router}>
+        </RouterProvider>
+      )}
+    </React.StrictMode>
+  );
+};
+
+createRoot(document.getElementById('root')).render(<RootComponent />);

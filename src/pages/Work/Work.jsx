@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { Suspense, useEffect } from 'react'
 import { Card, Container } from '../../components'
 import Typed from 'typed.js';
 import { IoIosArrowDown } from "react-icons/io";
@@ -67,12 +67,15 @@ const Work = () => {
       <section id='work'>
         <div className='grid p-0 md:grid-cols-2 gap-10'>
           {CardData.map((item) => (
+
             <Card key={item.head} heading={item.head} TechStack={item.TechStack} Img={item.img} para={item.para} git={item.gitLink} live={item.liveLink} liveText={item.liveText} year={item.year} />
+          
           ))}
 
         </div>
       </section>
     </Container>
+
   )
 }
 

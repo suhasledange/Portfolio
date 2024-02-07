@@ -10,9 +10,8 @@ const About = () => {
       <div className='mb-10 space-y-10'>
         <AboutHead />
         <Skills />
-        <Youtube />
+        {/* <Youtube /> */}
       </div>
-
     </Container>
   )
 }
