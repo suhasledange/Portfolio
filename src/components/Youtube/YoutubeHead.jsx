@@ -1,7 +1,17 @@
 import React from 'react'
 import { Ylogo } from '../../assets';
 
-const YoutubeHead = () => {
+const YoutubeHead = ({subscribers,videoCount,viewCount}) => {
+
+  const formatNumber = (number) => {
+    if (isNaN(number)) {
+      return "_";
+    }
+  
+    return number < 1e3 ? number : `${(number / 1e3).toFixed(1)}K${number < 1e6 ? '' : number < 1e9 ? 'M' : 'B'}`;
+  };
+
+
   return (
     <div className='flex items-center lg:justify-evenly justify-between mb-16'>
        
@@ -13,10 +23,10 @@ const YoutubeHead = () => {
             <h1 className='font-bold tracking-wide text-2xl mb-3'>Bass Town</h1>
             <ul className='lg:w-auto w-[70%] flex flex-wrap items-center list-disc space-x-7'>
                 <span className='text-lg italic'>@basstown10</span>
-                <li >30.9k subscribers</li>
-                <li>188 videos</li>
+                <li >{formatNumber(subscribers)} subscribers</li>
+                <li>{videoCount} videos</li>
             </ul>  
-            <p>views count : </p>
+            <p>Total Views : {viewCount}</p>
         </div>
     </div>
   )

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Container } from '../../components';
 import { touch } from '../../assets';
 
 const Contact = () => {
@@ -47,6 +46,7 @@ const Contact = () => {
   };
 
   return (
+    
     <div className='w-full flex flex-col min-h-screen max-w-screen-xl mx-auto dark:bg-[#222C39]'>
       <div className='w-full flex flex-col items-center justify-center h-screen md:-mt-12 mt-10 md:p-0 pb-10'>
         <div className='w-full bg-white dark:bg-gray-800 lg:p-10 p-3 py-16 rounded-lg shadow-xl'>
