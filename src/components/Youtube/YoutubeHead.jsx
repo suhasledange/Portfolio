@@ -19,7 +19,7 @@ const YoutubeHead = ({ subscribers, videoCount, viewCount }) => {
 
       <div className='lg:w-40 lg:h-40 md:w-32 md:h-32 w-28 h-28 lg:mx-0 mx-auto'>
 
-        <a href={"https://www.youtube.com/channel/UC1ynsuU6XPZ2iWw1Gf9SHlQ"} target='_blank'>
+        <a href={"https://www.youtube.com/channel/UC1ynsuU6XPZ2iWw1Gf9SHlQ"} title="Visit My Channel" target='_blank'>
         <LazyLoadImage
           alt=""
           src={Ylogo}
@@ -35,7 +35,7 @@ const YoutubeHead = ({ subscribers, videoCount, viewCount }) => {
 
       <div className='space-y-1 lg:w-auto w-[50%]'>
         
-      <a className='font-bold tracking-wide text-2xl mb-3' href={"https://www.youtube.com/channel/UC1ynsuU6XPZ2iWw1Gf9SHlQ"} target='_blank'>Bass Town</a>
+      <a className='font-bold tracking-wide text-2xl mb-3' href={"https://www.youtube.com/channel/UC1ynsuU6XPZ2iWw1Gf9SHlQ"} target='_blank' title="Visit My Channel">Bass Town</a>
       
         <ul className='lg:w-auto w-[70%] flex flex-wrap items-center list-disc space-x-7'>
           <span className='text-lg italic'>@basstown10</span>

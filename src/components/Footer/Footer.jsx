@@ -8,11 +8,11 @@ import { FaInstagram } from "react-icons/fa";
 const Footer = () => {
 
   const FootLink = [
-    { logo: <FaGithub/>, href: 'https://github.com/suhasledange' },
-    { logo: <FaXTwitter/>, href: 'https://x.com/suhas_ledange' },
-    { logo: <FaLinkedin />, href: 'https://in.linkedin.com/in/suhas-ledange-4a0533206' },
-    { logo:<FaInstagram/>, href: 'https://www.instagram.com/suhasledange/' },
-    { logo: <FaYoutube/>, href: 'https://www.youtube.com/channel/UC1ynsuU6XPZ2iWw1Gf9SHlQ' },
+    { logo: <FaGithub/>, href: 'https://github.com/suhasledange',title:"Github" },
+    { logo: <FaXTwitter/>, href: 'https://x.com/suhas_ledange',title:"Twitter"},
+    { logo: <FaLinkedin />, href: 'https://in.linkedin.com/in/suhas-ledange-4a0533206',title:"Linkdin" },
+    { logo:<FaInstagram/>, href: 'https://www.instagram.com/suhasledange/',title:"Instagram" },
+    { logo: <FaYoutube/>, href: 'https://www.youtube.com/channel/UC1ynsuU6XPZ2iWw1Gf9SHlQ',title:"Youtube" },
 
 
   ]
@@ -23,7 +23,7 @@ const Footer = () => {
         <ul className='lg:py-4 py-5 px-4 lg:space-y-5 dark:text-purple-100 text-purple-800 text-2xl flex lg:gap-0 gap-6 lg:flex-col lg:items-center justify-center'>
           {FootLink.map((item)=>(
             <li className='hover:text-purple-900 duration-150 cursor-pointer hover:translate-y-[-0.3rem] lg:hover:translate-x-1' key={item.href}>
-                <a target='_blank' href={item.href}>{item.logo}</a>
+                <a target='_blank' title={item.title} href={item.href}>{item.logo}</a>
             </li>
             
             ))}

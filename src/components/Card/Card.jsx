@@ -43,6 +43,7 @@ const Card = ({ heading, TechStack, Img, para, git, live, liveText, year }) => {
           href={git}
           target='_blank'
           rel='noopener noreferrer'
+          title="Github"
         >
           <FaGithub /> GitHub
         </a>
@@ -51,6 +52,7 @@ const Card = ({ heading, TechStack, Img, para, git, live, liveText, year }) => {
           href={live}
           target='_blank'
           rel='noopener noreferrer'
+          title="Live"
         >
           <IoIosOpen /> {liveText}
         </a>
