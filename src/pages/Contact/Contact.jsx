@@ -101,7 +101,7 @@ const Contact = () => {
                 {submitError && <p className="text-red-600">{submitError}</p>}
                 <button
                   type='submit'
-                  className='bg-purple-700 border-2 border-purple-700 font-medium duration-200 text-lg text-gray-100 p-2 rounded-md hover:bg-transparent transition-colors'
+                  className='bg-purple-700 border-2 border-purple-700 font-medium duration-200 text-lg text-gray-200 hover:text-purple-700 p-2 rounded-md hover:bg-transparent transition-colors'
                 >
                   Submit
                 </button>
