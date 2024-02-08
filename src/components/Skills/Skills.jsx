@@ -24,7 +24,7 @@ const Skills = () => {
         icon:<MdOutlineWeb className='text-lg'/>},
         
         {skill:"Backend Development",skills:[
-          {name:"Node",percentage:65},
+          {name:"NodeJS",percentage:65},
           {name:"MongoDB",percentage:74},
           {name:"MySQL",percentage:70},
         ],
