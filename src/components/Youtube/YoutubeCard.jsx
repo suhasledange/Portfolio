@@ -45,8 +45,6 @@ const YoutubeCard = ({ title, link, publishedAt}) => {
       <div className='flex items-center space-x-4 mt-2'>
         <div className='w-10 h-10'>
 
-          {/* <img className='w-full h-full object-contain' src={Ylogo} alt='YouTube Logo' /> */}
-
           <LazyLoadImage
             alt=""
             src={Ylogo}

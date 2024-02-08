@@ -15,7 +15,6 @@ const Card = ({ heading, TechStack, Img, para, git, live, liveText, year }) => {
 
       <div className='p-3 md:p-5'>
         <div className=' rounded-lg lg:w-full w-[90%] mx-auto h-[17rem] py-5 hover:scale-105 duration-300'>
-          {/* <img className='hover:scale-105 duration-300 dark:brightness-75 dark:contrast-125 w-full h-full bg-cover object-contain rounded-lg ' src={Img} alt={heading} /> */}
           
           <LazyLoadImage
             className='dark:brightness-75 dark:contrast-125 bg-cover object-contain w-full h-full rounded-lg drop-shadow-xl'

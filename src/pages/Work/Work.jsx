@@ -53,7 +53,6 @@ const Work = () => {
           </div>
 
           <div className='w-[70%] h-[70%] md:hidden hidden lg:block'>
-            {/* <img src={male} className='w-full h-full'/>  */}
             
             <LazyLoadImage
             className='w-full h-full drop-shadow-2xl'

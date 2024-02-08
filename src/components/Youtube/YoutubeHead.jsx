@@ -19,7 +19,6 @@ const YoutubeHead = ({ subscribers, videoCount, viewCount }) => {
 
       <div className='lg:w-40 lg:h-40 md:w-32 md:h-32 w-28 h-28 lg:mx-0 mx-auto'>
 
-        {/* <img className='rounded-full w-full h-full object-cover' src={Ylogo}/> */}
         <a href={"https://www.youtube.com/channel/UC1ynsuU6XPZ2iWw1Gf9SHlQ"} target='_blank'>
         <LazyLoadImage
           alt=""

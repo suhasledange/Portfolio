@@ -1,11 +1,23 @@
 import React from 'react'
 import { aboutme } from '../../assets'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const AboutHead = () => {
   return (
     <div className='mt-5 flex flex-col flex-grow items-center mb-10 overflow-x-hidden'>
     <div className=' w-[30rem]'>
-          <img className='w-full full' src={aboutme}/>
+
+    <LazyLoadImage
+            className='w-full h-full'
+            alt=""
+            src={aboutme}
+            effect="blur" 
+            threshold={200}
+            width="100%"
+            height="100%"
+          />
+   
     </div>
     <div className='px-5 md:px-0 text-center  md:max-w-screen-md sm:max-w-screen-sm tracking-wider'>
     <h1 className='text-lg mb-2 font-medium'>Hello! I'm Suhas,</h1>

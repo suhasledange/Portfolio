@@ -67,9 +67,6 @@ const Contact = () => {
             height="100%"
           />
 
-              {/* <img className='w-full h-auto rounded-md' src={touch} alt='Touch' /> */}
-          
-          
             </div>
             <div className='w-full lg:pl-8'>
               <form onSubmit={handleSubmit} className='flex flex-col space-y-4'>
