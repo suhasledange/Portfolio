@@ -3,8 +3,9 @@ import { Ylogo } from '../../assets';
 import ReactPlayer from 'react-player/lazy';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import { formatDistanceToNow, parseISO } from 'date-fns';
 
-const YoutubeCard = ({ title, link }) => {
+const YoutubeCard = ({ title, link, publishedAt}) => {
   const [isPlayerReady, setPlayerReady] = useState(false);
 
   const handlePlayerReady = () => {
@@ -16,8 +17,13 @@ const YoutubeCard = ({ title, link }) => {
     overflow: 'hidden',
   };
 
+  const dateObject = parseISO(publishedAt);
+
+  const Publish = formatDistanceToNow(dateObject, { addSuffix: true });
+
 
   return (
+    <div className='mx-auto bg-black p-2 m-2 rounded-md'>
     <div className='lg:w-72 md:w-80 w-96 mx-auto mb-24 lg:h-40 md:h-44 h-48'>
 
       <div className='mx-auto w-full h-full'>
@@ -52,10 +58,15 @@ const YoutubeCard = ({ title, link }) => {
           />
 
         </div>
-        <h1 className='text-md font-normal text-gray-700 dark:text-gray-200'>
+        <div className='space-y-1'>
+        <h1 className='text-md font-normal text-gray-300 dark:text-gray-200'>
           {title.substr(0, 50)}...
         </h1>
+        <p className='text-gray-500 text-base'>{Publish}</p>
+        </div>
+
       </div>
+    </div>
     </div>
   );
 };
