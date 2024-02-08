@@ -5,6 +5,8 @@ import { IoIosArrowDown } from "react-icons/io";
 import { CardData } from '../../constant';
 import { Link as ScrollLink } from 'react-scroll';
 import { blob, favicon, male, pdf } from '../../assets';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Work = () => {
 
@@ -50,9 +52,21 @@ const Work = () => {
             </div>
           </div>
 
-          <div className='relative w-[70%] h-[70%] md:hidden hidden lg:block'>
-            <img src={male} className='w-full h-full'/> 
-            {/* <img src={blob} className='w-full h-full'/> */}
+          <div className='w-[70%] h-[70%] md:hidden hidden lg:block'>
+            {/* <img src={male} className='w-full h-full'/>  */}
+            
+            <LazyLoadImage
+            className='w-full h-full drop-shadow-2xl'
+            alt=""
+            src={male}
+            effect="blur" 
+            threshold={200}
+            width="100%"
+            height="100%"
+          />
+
+        
+        
           </div>
 
         </div>
