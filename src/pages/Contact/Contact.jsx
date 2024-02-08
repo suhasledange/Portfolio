@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { touch } from '../../assets';
+import conf from '../../conf/conf';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,7 +18,7 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://formspree.io/f/mnqenlvp', {
+      const response = await fetch(`https://formspree.io/f/${conf.FORM}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -53,7 +56,20 @@ const Contact = () => {
           <h1 className='text-center mb-20 font-medium tracking-wider text-4xl text-purple-700 dark:text-gray-100 underline underline-offset-4'>Get in touch</h1>
           <div className='flex items-center justify-center gap-10 md:flex-row flex-col'>
             <div className='w-full '>
-              <img className='w-full h-auto rounded-md' src={touch} alt='Touch' />
+
+            <LazyLoadImage
+            className='w-full h-auto rounded-md'
+            alt=""
+            src={touch}
+            effect="blur" 
+            threshold={200}
+            width="100%"
+            height="100%"
+          />
+
+              {/* <img className='w-full h-auto rounded-md' src={touch} alt='Touch' /> */}
+          
+          
             </div>
             <div className='w-full lg:pl-8'>
               <form onSubmit={handleSubmit} className='flex flex-col space-y-4'>
