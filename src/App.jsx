@@ -2,7 +2,6 @@ import { Outlet } from "react-router-dom";
 import { Footer, Footer1, Header } from "./components";
 import { ThemeProvider } from "./context/theme";
 import { useEffect, useState } from "react";
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 function App() {
   
