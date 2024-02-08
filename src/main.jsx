@@ -5,7 +5,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { About, Contact, Work } from './pages/index.js';
 import App from './App.jsx';
 import { Loader } from './components/index.js';
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 const router = createBrowserRouter([
   {
     path: '/',
