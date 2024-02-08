@@ -22,8 +22,6 @@ const Card = ({ heading, TechStack, Img, para, git, live, liveText, year }) => {
             src={Img}
             effect="blur" 
             threshold={200}
-            width="100%"
-            height="100%"
           />
         </div>
         <div className='space-y-3 mt-4'>
