@@ -1,19 +1,40 @@
+import axios from "axios";
 import conf from "../conf/conf";
 
-const fetchurl = `https://www.googleapis.com/youtube/v3/search?key=${conf.API}&channelId=${conf.ID}&part=snippet,id&maxResults=25`;
+const options = {
+  method: 'GET',
+  url: 'https://youtube-v31.p.rapidapi.com/search',
+  params: {
+    channelId: conf.ID,
+    part: 'snippet,id',
+    order: 'date',
+    maxResults: '50'
+  },
+  headers: {
+    'X-RapidAPI-Key': conf.API,
+    'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
+  }
+};
 
-const fetchurl1 = `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${conf.ID}&key=${conf.API}`;
+const options1 = {
+  method: 'GET',
+  url: 'https://youtube-v31.p.rapidapi.com/channels',
+  params: {
+    part: 'snippet,statistics',
+    id: conf.ID
+  },
+  headers: {
+    'X-RapidAPI-Key': conf.API,
+    'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
+  }
+};
+
 
 
 export const fetchFromYoutube = async () => {
   try {
-    const response = await fetch(fetchurl);
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch data. Status: ${response.status}`);
-    }
-
-    const resData = await response.json();
+    const response = await axios.request(options);
+    const resData = await response.data;    
     return resData;
   } catch (error) {
     console.error("Error fetching data from YouTube API:", error);
@@ -24,13 +45,9 @@ export const fetchFromYoutube = async () => {
 
 export const fetchChannelYoutube = async () => {
     try {
-      const response = await fetch(fetchurl1);
+      const response = await axios.request(options1);
   
-      if (!response.ok) {
-        throw new Error(`Failed to fetch data. Status: ${response.status}`);
-      }
-  
-      const resData = await response.json();
+      const resData = await response.data;
       return resData;
     } catch (error) {
       console.error("Error fetching data from YouTube API:", error);

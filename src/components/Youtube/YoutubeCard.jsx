@@ -23,7 +23,7 @@ const YoutubeCard = ({ title, link, publishedAt}) => {
 
 
   return (
-    <div className='lg:px-0 px-3 mx-auto'>
+    <div className='lg:px-0 px-3 mx-auto lg:w-auto md:w-auto w-full'>
 
     <div className='mx-auto bg-black p-3 lg:p-2 m-3 rounded-md'>
     <div className='lg:w-72 md:w-80 w-full mx-auto mb-24 lg:h-40 md:h-44 h-44'>

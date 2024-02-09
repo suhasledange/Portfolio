@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { Suspense, useCallback, useEffect, useState } from 'react';
 import { fetchChannelYoutube, fetchFromYoutube } from '../../utils/api';
 import Loader from '../Loader/Loader';
 import YoutubeHead from './YoutubeHead';
@@ -14,6 +14,7 @@ const Youtube = () => {
   const [videosPerPage, setVideosPerPage] = useState(9);
 
   useEffect(() => {
+
     const fetchVideos = async () => {
       try {
         const data = await fetchFromYoutube();
