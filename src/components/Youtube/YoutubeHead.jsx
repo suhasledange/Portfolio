@@ -17,11 +17,11 @@ const YoutubeHead = ({ subscribers, videoCount, viewCount }) => {
   return (
     <div className='flex items-center lg:justify-evenly justify-between mb-16'>
 
-      <div className='lg:w-40 lg:h-40 md:w-32 md:h-32 w-28 h-28 lg:mx-0 mx-auto'>
+      <div className='lg:w-40 lg:h-40 md:w-32 md:h-32 w-28 h-28 lg:mx-0 mx-auto overflow-hidden rounded-full'>
 
         <a href={"https://www.youtube.com/channel/UC1ynsuU6XPZ2iWw1Gf9SHlQ"} title="Visit My Channel" target='_blank'>
         <LazyLoadImage
-         className='rounded-full'
+         className='-mt-[2px] rounded-full'
           alt=""
           src={Ylogo}
           effect="blur"
