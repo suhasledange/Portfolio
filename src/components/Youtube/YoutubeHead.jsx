@@ -21,6 +21,7 @@ const YoutubeHead = ({ subscribers, videoCount, viewCount }) => {
 
         <a href={"https://www.youtube.com/channel/UC1ynsuU6XPZ2iWw1Gf9SHlQ"} title="Visit My Channel" target='_blank'>
         <LazyLoadImage
+         className='rounded-full'
           alt=""
           src={Ylogo}
           effect="blur"
