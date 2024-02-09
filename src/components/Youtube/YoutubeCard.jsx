@@ -21,7 +21,6 @@ const YoutubeCard = ({ title, link, publishedAt}) => {
 
   const Publish = formatDistanceToNow(dateObject, { addSuffix: true });
 
-
   return (
     <div className='lg:px-0 px-3 mx-auto lg:w-auto md:w-auto w-full'>
 
