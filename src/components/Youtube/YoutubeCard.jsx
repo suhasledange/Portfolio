@@ -23,10 +23,11 @@ const YoutubeCard = ({ title, link, publishedAt}) => {
 
 
   return (
-    <div className='mx-auto bg-black p-2 m-2 rounded-md'>
-    <div className='lg:w-72 md:w-80 w-96 mx-auto mb-24 lg:h-40 md:h-44 h-48'>
+    
+    <div className='mx-auto bg-black p-3 lg:p-2 m-3 rounded-md'>
+    <div className='lg:w-72 md:w-80 w-full mx-auto mb-24 lg:h-40 md:h-44 h-72'>
 
-      <div className='mx-auto w-full h-full'>
+      <div className=' lg:w-full h-full'>
 
         {!isPlayerReady && <div className='flex items-center justify-center bg-black w-full h-full'>
           <div className='animate-spin rounded-full border-t-2 border-b-2 border-purple-700 h-12 w-12'></div>
@@ -47,6 +48,7 @@ const YoutubeCard = ({ title, link, publishedAt}) => {
 
           <LazyLoadImage
             alt=""
+            className='rounded-full'
             src={Ylogo}
             effect="blur" 
             threshold={200}
