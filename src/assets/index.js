@@ -1,5 +1,6 @@
 import AMS from './AMS.webp'
 import Notes from './Notes.webp'
+import Bookcafe from './Bookcafe.webp'
 import Portfolio from './Portfolio.webp'
 import Best from './Best.webp'
 import blob from './blob.svg'
@@ -9,4 +10,4 @@ import aboutme from './aboutMe.svg'
 import touch from './touch.svg'
 import Ylogo from './logo.webp'
 import pdf from './SuhasLedangeResume.pdf'
-export {Ylogo,AMS,Notes,Portfolio,Best,blob,favicon,male,aboutme,pdf,touch}
+export {Bookcafe,Ylogo,AMS,Notes,Portfolio,Best,blob,favicon,male,aboutme,pdf,touch}
