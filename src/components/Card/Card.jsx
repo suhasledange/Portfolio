@@ -7,7 +7,7 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Card = ({ heading, TechStack, Img, para, git, live, liveText, year }) => {
   return (
-    <div className='relative border dark:shadow-xl dark:drop-shadow-xl dark:border-gray-800 dark:bg-gray-800 bg-gray-50 rounded-md shadow-md p-5 cursor-pointer mx-auto w-[90%] md:w-full overflow-hidden group flex flex-col justify-between'>
+    <div className='relative border dark:shadow-xl dark:drop-shadow-xl dark:border-gray-800 dark:bg-gray-800 bg-gray-50 rounded-md shadow-md p-5 cursor-pointer mx-auto w-full overflow-hidden group flex flex-col justify-between'>
 
       <div className='absolute top-[0.6rem] left-3'>
         <h1 className='text-purple-600 text-md'>{year}</h1>

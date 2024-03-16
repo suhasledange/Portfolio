@@ -74,7 +74,8 @@ const Youtube = () => {
       {loading ? (
         <Loader />
       ) : (
-        <div ref={videosSectionRef} className='flex flex-wrap overflow-hidden'>
+            <div className='grid gap-x-3' style={{gridTemplateColumns: 'repeat(auto-fill,minmax(300px,1fr)'}}>
+
           <Suspense fallback={<Loader />}>
             {currentVideos.length ? (
               currentVideos.map((video) => (
