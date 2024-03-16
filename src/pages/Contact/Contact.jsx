@@ -3,7 +3,6 @@ import { touch } from '../../assets';
 import conf from '../../conf/conf';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import { Container } from '../../components';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
