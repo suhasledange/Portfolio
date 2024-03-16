@@ -15,10 +15,10 @@ const Card = ({ heading, TechStack, Img, para, git, live, liveText, year }) => {
 
       <div className='mt-7'>
         
-        <div className='rounded-lg py-2 mx-auto hover:scale-[102%] duration-300'>
+        <div className='rounded-lg py-2 mx-auto hover:scale-[102%] duration-200'>
           
           <LazyLoadImage
-            className='dark:brightness-75 dark:contrast-125 bg-cover object-contain w-full h-full rounded-lg drop-shadow-xl'
+            className='dark:brightness-75 dark:contrast-125 bg-cover object-contain w-full h-full rounded-lg hover:drop-shadow-xl'
             alt={heading}
             src={Img}
             effect="blur" 
