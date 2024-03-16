@@ -37,7 +37,6 @@ const YoutubeCard = ({ title, link, publishedAt}) => {
           style={playerStyle}
           width="100%"
           height="100%"
-          objectFit="contain"
           url={link}
           onReady={handlePlayerReady}
         />

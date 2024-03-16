@@ -2,7 +2,7 @@ import React, { Suspense, useCallback, useEffect, useRef, useState } from 'react
 import { fetchFromYoutube, fetchChannelYoutube } from '../../utils/api';
 import Loader from '../Loader/Loader';
 import YoutubeHead from './YoutubeHead';
-import YoutubeCard from './YoutubeCard'; // Assuming you have imported YoutubeCard
+import YoutubeCard from './YoutubeCard'; 
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 
 const Youtube = () => {
@@ -38,6 +38,7 @@ const Youtube = () => {
     fetchVideosAndChannelData();
   }, []);
 
+
   useEffect(() => {
     if (videosSectionRef.current) {
       videosSectionRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -64,7 +65,7 @@ const Youtube = () => {
       <h1 className='text-center font-bold text-purple-700 mb-20 text-2xl'>
         Youtube Channel
       </h1>
-
+      
       <YoutubeHead
         subscribers={channelData.subscriberCount || 0}
         videoCount={channelData.videoCount || 0}
@@ -78,9 +79,9 @@ const Youtube = () => {
 
           <Suspense fallback={<Loader />}>
             {currentVideos.length ? (
-              currentVideos.map((video) => (
+              currentVideos.map((video,idx) => (
                 <YoutubeCard
-                  key={video.id.videoId}
+                  key={idx}
                   title={video.snippet.title}
                   publishedAt={video.snippet.publishedAt}
                   link={video.Videolink}
