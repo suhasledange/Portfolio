@@ -3,6 +3,7 @@ import { touch } from '../../assets';
 import conf from '../../conf/conf';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import { Container } from '../../components';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -49,12 +50,12 @@ const Contact = () => {
   };
 
   return (
-    
-    <div className='w-full flex flex-col min-h-screen max-w-screen-xl mx-auto dark:bg-[#222C39]'>
-      <div className='w-full flex flex-col items-center justify-center h-screen md:-mt-12 mt-10 md:p-0 pb-10'>
-        <div className='w-full bg-white dark:bg-gray-800 lg:p-10 p-3 py-16 rounded-lg shadow-xl'>
-          <h1 className='text-center mb-20 font-medium tracking-wider text-4xl text-purple-700 dark:text-gray-100 underline underline-offset-4'>Get in touch</h1>
-          <div className='flex items-center justify-center gap-10 md:flex-row flex-col'>
+    <div className=' min-h-screen md:-mt-12 flex items-center justify-center'>
+
+        <div className='max-w-screen-lg mx-auto p-5 dark:bg-gray-800 rounded-md shadow-xl'>
+            <h1 className=' text-4xl underline underline-offset-4 text-purple-700 font-bold text-center mb-10'>Get In Touch</h1>
+        <div className=' flex md:flex-row gap-5 flex-col w-full h-full items-center justify-between'>
+
             <div className='w-full '>
 
             <LazyLoadImage
@@ -68,7 +69,9 @@ const Contact = () => {
           />
 
             </div>
-            <div className='w-full lg:pl-8'>
+
+
+            <div className='w-full md:pl-8'>
               <form onSubmit={handleSubmit} className='flex flex-col space-y-4'>
                 <input
                   name='name'
@@ -104,10 +107,12 @@ const Contact = () => {
                 </button>
               </form>
             </div>
-          </div>
+            
         </div>
-      </div>
+        </div>
     </div>
+
+            
   );
 };
 

@@ -17,13 +17,14 @@ const router = createBrowserRouter([
         element: <Work />,
       },
       {
-        path: 'about',
-        element: <About />,
-      },
-      {
         path: 'contact',
         element: <Contact />,
       },
+      {
+        path: 'about',
+        element: <About />,
+      },
+     
     ],
   },
 ]);

@@ -15,12 +15,10 @@
     background: #7E22CE; 
     border-radius: 5px; 
   }
-  html {
-    scroll-behavior: smooth;
-  }
   
   html{
-    overflow-x:hidden ;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
