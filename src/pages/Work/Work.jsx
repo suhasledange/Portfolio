@@ -30,11 +30,12 @@ const Work = () => {
   return (
 
     <Container>
-      <section className='h-[35rem] md:h-[37rem] mb-10 flex justify-between flex-col flex-grow '>
+      <section className='h-[37rem] flex flex-col mb-10'>
 
-        <div className='flex w-full justify-between items-center h-full'>
+        <div className='flex w-full justify-between items-center h-[95%] -mt-8'>
 
           <div className='space-y-14'>
+            
             <div className='space-y-3'>
 
               <h1 className='text-4xl md:text-[3.4rem] custom-font font-bold'>HELLO, I'M SUHAS</h1>
@@ -42,8 +43,9 @@ const Work = () => {
               <div className='h-[3rem]'>
                 <span className='text-purple-600 font-semibold text-3xl md:text-4xl cursor-none' id="typed-text"></span>
               </div>
-              <div className='pt-2 md:w-2/4'>
-                <p className='text-md md:text-lg font-normal dark:text-gray-400 text-gray-600'>I'm a passionate web developer specializing in React, where I bring creative and dynamic ideas to life through clean and efficient code and Beyond coding, I'm also a content creator on YouTube</p>
+              
+              <div className='pt-2 md:w-[60%]'>
+                <p className='text-md text-justify md:text-lg font-normal dark:text-gray-400 text-gray-600'>I'm a passionate web developer specializing in React, where I bring creative and dynamic ideas to life through clean and efficient code and Beyond coding, I'm also a content creator on YouTube.</p>
               </div>
             </div>
 
@@ -68,7 +70,7 @@ const Work = () => {
 
         </div>
 
-        <ScrollLink to="work" smooth={true} duration={700} className=' animate-bounce flex items-center justify-center cursor-pointer text-4xl text-purple-700 font-bold'>
+        <ScrollLink to="work" smooth={true} duration={600} className=' animate-bounce flex items-center justify-center cursor-pointer text-4xl text-purple-700 font-bold'>
           <IoIosArrowDown />
         </ScrollLink>
 
