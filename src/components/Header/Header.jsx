@@ -21,11 +21,11 @@ const Header = () => {
   };
 
   return (
-    <header className='w-full bg-gray-50 dark:bg-gray-800 md:shadow-md shadow-sm dark:drop-shadow-md sticky top-0 z-30 overflow-x-hidden'>
-      <div onClick={()=>setMenuOpen(false)} className={`${menuOpen ? "translate-x-0" : "translate-x-full"} absolute md:top-[4.5rem] top-16 bg-transparent w-full min-h-screen`}></div>
+    <header className='w-full bg-gray-50 dark:bg-gray-800 md:shadow-md shadow-sm dark:drop-shadow-md sticky top-0 z-30'>
+      <div onClick={()=>setMenuOpen(false)} className={`${menuOpen ? "translate-x-0" : "translate-x-full"} absolute md:top-[4.5rem] md:hidden top-16 bg-transparent w-full min-h-screen`}></div>
      
       <div
-          className={` ${menuOpen ? "translate-x-0" : "translate-x-full"} transition-transform duration-200  lg:hidden absolute bg-gray-50 border-t-2 border-gray-100 dark:bg-gray-800 w-[60%] min-h-screen top-16 right-0 shadow-lg z-10 `}
+          className={` ${menuOpen ? "translate-x-0" : "translate-x-full"} transition-transform duration-200  md:hidden absolute bg-gray-50 border-t-2 border-gray-100 dark:bg-gray-800 w-[60%] min-h-screen top-16 right-0 shadow-lg z-10 `}
         >
           
           <ul className=' tracking-wider text-lg flex flex-col gap-5 items-center pt-4'>
@@ -53,7 +53,7 @@ const Header = () => {
         </div>
 
         
-        <div className='lg:hidden flex items-center justify-center'>
+        <div className='md:hidden flex items-center justify-center'>
           <button
             onClick={handleToggleMenu}
             className='text-2xl dark:text-purple-100 text-purple-700 focus:outline-none'
@@ -63,7 +63,7 @@ const Header = () => {
         </div>
 
      
-        <div className={`lg:flex h-full hidden`}>
+        <div className={`md:flex h-full hidden`}>
           <ul className='flex items-center tracking-wider text-gray-700 font-medium h-full space-x-4'>
             {Navlinks.map((item) => (
               <NavLink
