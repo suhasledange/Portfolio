@@ -65,7 +65,7 @@ const Youtube = () => {
       <h1 className='text-center font-bold text-purple-700 mb-20 text-2xl'>
         Youtube Channel
       </h1>
-      
+
       <YoutubeHead
         subscribers={channelData.subscriberCount || 0}
         videoCount={channelData.videoCount || 0}
@@ -96,14 +96,14 @@ const Youtube = () => {
 
       <div className='pagination flex items-center justify-center space-x-10 mt-10'>
         <button onClick={() => paginate('prev')} disabled={currentPage === 1}>
-          <FaArrowAltCircleLeft className={`text-4xl text-purple-700 ${currentPage === 1 ? "text-purple-500" : "text-purple-700"}`} />
+          <FaArrowAltCircleLeft className={`text-4xl text-purple-700 ${currentPage === 1 ? "text-purple-400" : "text-purple-700"}`} />
         </button>
 
         <button
           onClick={() => paginate('next')}
           disabled={currentPage === totalPages}
         >
-          <FaArrowAltCircleRight className={`text-4xl text-purple-700 ${currentPage === totalPages ? "text-purple-500" : "text-purple-700"}`} />
+          <FaArrowAltCircleRight className={`text-4xl text-purple-700 ${currentPage === totalPages ? "text-purple-400" : "text-purple-700"}`} />
         </button>
       </div>
     </div>
