@@ -1,85 +1,56 @@
 import React, { Suspense, useCallback, useEffect, useState } from 'react';
-import { fetchChannelYoutube, fetchFromYoutube } from '../../utils/api';
+import { fetchFromYoutube, fetchChannelYoutube } from '../../utils/api';
 import Loader from '../Loader/Loader';
 import YoutubeHead from './YoutubeHead';
-const YoutubeCard = React.lazy(() => import('./YoutubeCard'));
-import { FaArrowAltCircleLeft } from "react-icons/fa";
-import { FaArrowAltCircleRight } from "react-icons/fa";
+import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+import YoutubeCard from './YoutubeCard';
 
 const Youtube = () => {
-  const [allVideo, setAllVideo] = useState([]);
+  const [allVideos, setAllVideos] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [channelData, setChannelData] = useState([]);
+  const [channelData, setChannelData] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
-  const [videosPerPage, setVideosPerPage] = useState(9);
+  const videosPerPage = 9;
 
   useEffect(() => {
-
-    const fetchVideos = async () => {
+    const fetchVideosAndChannelData = async () => {
       try {
-        const data = await fetchFromYoutube();
+        const [videoData, channelData] = await Promise.all([
+          fetchFromYoutube(),
+          fetchChannelYoutube()
+        ]);
 
-        const result = data.items.map((doc) => {
-          if (doc.id && doc.id.videoId) {
-            return {
-              ...doc,
-              Videolink: 'https://www.youtube.com/embed/' + doc.id.videoId,
-            };
-          }
-          return null;
-        });
-
-        const filteredResult = result.filter(Boolean);
-        setAllVideo(filteredResult);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching data from YouTube', error);
-        setLoading(false);
-      }
-    };
-
-    fetchVideos();
-  }, []);
-
-  useEffect(() => {
-    const fetchChannelData = async () => {
-      try {
-        const data = await fetchChannelYoutube();
-
-        const result = data.items.map((doc) => ({
-          ...doc.statistics,
+        const videos = videoData.items.map((video) => ({
+          ...video,
+          Videolink: `https://www.youtube.com/embed/${video.id.videoId}`,
         }));
-        setChannelData(result);
+
+        setAllVideos(videos);
+        setChannelData(channelData.items[0]?.statistics || {});
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching data from YouTube', error);
+        setLoading(false);
       }
     };
-    fetchChannelData();
+
+    fetchVideosAndChannelData();
   }, []);
 
-  const totalPages = Math.ceil(allVideo.length / videosPerPage);
+  const totalPages = Math.ceil(allVideos.length / videosPerPage);
 
-  const paginate = (action) => {
-
-    const videosSection = document.getElementById('videosSection');
-
-    if (action === 'prev' && currentPage > 1) {
-      setCurrentPage((prevPage) => prevPage - 1);
-    } else if (action === 'next' && currentPage < totalPages) {
-      setCurrentPage((prevPage) => prevPage + 1);
-    } else if (typeof action === 'number') {
-      setCurrentPage(action);
-    }
-
-    if (videosSection) {
-      videosSection.scrollIntoView({ behavior: 'smooth' });
-    }
-
-  };
+  const paginate = useCallback((action) => {
+    setCurrentPage((prevPage) => {
+      if (action === 'prev' && prevPage > 1) return prevPage - 1;
+      if (action === 'next' && prevPage < totalPages) return prevPage + 1;
+      if (typeof action === 'number') return action;
+      return prevPage;
+    });
+  }, [totalPages]);
 
   const indexOfLastVideo = currentPage * videosPerPage;
   const indexOfFirstVideo = indexOfLastVideo - videosPerPage;
-  const currentVideos = allVideo.slice(indexOfFirstVideo, indexOfLastVideo);
+  const currentVideos = allVideos.slice(indexOfFirstVideo, indexOfLastVideo);
 
   return (
     <div className='mx-auto'>
@@ -87,31 +58,24 @@ const Youtube = () => {
         Youtube Channel
       </h1>
 
-      {allVideo.length ? (
-        <YoutubeHead
-          subscribers={channelData[0]?.subscriberCount || 0}
-          videoCount={channelData[0]?.videoCount || 0}
-          viewCount={channelData[0]?.viewCount || 0}
-        />
-      )
-        : (
-          ''
-        )}
+      <YoutubeHead
+        subscribers={channelData.subscriberCount || 0}
+        videoCount={channelData.videoCount || 0}
+        viewCount={channelData.viewCount || 0}
+      />
 
       {loading ? (
-        <div className='flex items-center justify-center'>
-          <div className='animate-spin rounded-full border-t-2 border-b-2 border-purple-700 h-12 w-12'></div>
-        </div>
+        <Loader />
       ) : (
         <div id="videosSection" className='flex flex-wrap overflow-hidden'>
           <Suspense fallback={<Loader />}>
             {currentVideos.length ? (
-              currentVideos.map((item) => (
+              currentVideos.map((video) => (
                 <YoutubeCard
-                  key={item.id.videoId}
-                  title={item.snippet.title}
-                  publishedAt={item.snippet.publishedAt}
-                  link={item.Videolink}
+                  key={video.id.videoId}
+                  title={video.snippet.title}
+                  publishedAt={video.snippet.publishedAt}
+                  link={video.Videolink}
                 />
               ))
             ) : (
@@ -121,25 +85,18 @@ const Youtube = () => {
         </div>
       )}
 
-      {allVideo.length ? (
-        <div className='pagination flex items-center justify-center space-x-10 mt-10'>
-          <button onClick={() => paginate('prev')} disabled={currentPage === 1}>
-            <FaArrowAltCircleLeft className={`text-4xl text-purple-700 ${currentPage === 1 ? "text-purple-500" : "text-purple-700"}`} />
-          </button>
+      <div className='pagination flex items-center justify-center space-x-10 mt-10'>
+        <button onClick={() => paginate('prev')} disabled={currentPage === 1}>
+          <FaArrowAltCircleLeft className={`text-4xl text-purple-700 ${currentPage === 1 ? "text-purple-500" : "text-purple-700"}`} />
+        </button>
 
-          <button
-            onClick={() => paginate('next')}
-            disabled={currentPage === totalPages}
-          >
-            <FaArrowAltCircleRight className={`text-4xl text-purple-700 ${currentPage === totalPages ? "text-purple-500" : "text-purple-700"}`} />
-
-          </button>
-        </div>
-
-      )
-        : (
-          ''
-        )}
+        <button
+          onClick={() => paginate('next')}
+          disabled={currentPage === totalPages}
+        >
+          <FaArrowAltCircleRight className={`text-4xl text-purple-700 ${currentPage === totalPages ? "text-purple-500" : "text-purple-700"}`} />
+        </button>
+      </div>
     </div>
   );
 };
