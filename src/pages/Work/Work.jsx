@@ -30,9 +30,9 @@ const Work = () => {
   return (
 
     <Container className="pb-10">
-      <section className='h-[37rem] flex flex-col mb-10'>
+      <section className='h-[38rem] flex flex-col mb-10'>
 
-        <div className='flex w-full justify-between items-center h-[95%] -mt-5'>
+        <div className='flex w-full justify-between items-center h-[95%]'>
 
           <div className='space-y-14'>
             
