@@ -21,28 +21,11 @@ const Header = () => {
   };
 
   return (
-    <div className='w-full bg-gray-50 dark:bg-gray-800 md:shadow-md shadow-sm dark:drop-shadow-md sticky top-0 z-10'>
-      <div className='flex justify-between items-center mx-auto max-w-screen-lg h-[4.5rem]'>
-        <div>
-          <h1 className='md:ml-0 ml-3 dark:text-purple-100 text-purple-700 font-bold text-2xl'>Suhas Ledange</h1>
-        </div>
-
-        
-        <div className='lg:hidden z-50'>
-          <button
-            onClick={handleToggleMenu}
-            className=' mr-2 text-2xl dark:text-purple-100 text-purple-700 p-2 focus:outline-none'
-          >
-            {menuOpen ? <IoMdClose className='text-3xl absolute top-[1.4rem] right-4' /> : <GiHamburgerMenu />}
-          </button>
-        </div>
-
-      <div className={` ${menuOpen ? 'block' : 'hidden'
-            }`}>
+    <header className='w-full bg-gray-50 dark:bg-gray-800 md:shadow-md shadow-sm dark:drop-shadow-md sticky top-0 z-30'>
+      <div onClick={()=>setMenuOpen(false)} className={`${menuOpen ? "translate-x-0" : "translate-x-full"} absolute md:top-[4.5rem] top-16 bg-transparent w-full min-h-screen`}></div>
      
-     <div className='absolute top-0 left-0 bg-black opacity-30 w-full h-screen' onClick={handleToggleMenu}></div>
-        <div
-          className={`lg:hidden absolute bg-gray-50 dark:bg-gray-800 w-2/4 min-h-screen  pt-20 top-0 right-0 shadow-lg z-40 `}
+      <div
+          className={` ${menuOpen ? "translate-x-0" : "translate-x-full"} transition-transform duration-200  lg:hidden absolute bg-gray-50 border-t-2 border-gray-100 dark:bg-gray-800 w-[60%] min-h-screen top-16 right-0 shadow-lg z-10 `}
         >
           
           <ul className=' tracking-wider text-lg flex flex-col gap-5 items-center pt-4'>
@@ -63,8 +46,23 @@ const Header = () => {
           </ul>
         </div>
 
+      <div className='flex px-3 justify-between items-center mx-auto max-w-screen-lg h-[4rem]  md:h-[4.5rem]'>
+        
+        <div onClick={()=>setMenuOpen(false)}>
+          <h1 className='dark:text-purple-100 cursor-pointer text-purple-700 font-bold text-2xl'>Suhas Ledange</h1>
         </div>
 
+        
+        <div className='lg:hidden flex items-center justify-center'>
+          <button
+            onClick={handleToggleMenu}
+            className='text-2xl dark:text-purple-100 text-purple-700 focus:outline-none'
+          >
+            {menuOpen ? <IoMdClose className='text-3xl' /> : <GiHamburgerMenu />}
+          </button>
+        </div>
+
+     
         <div className={`lg:flex h-full hidden`}>
           <ul className='flex items-center tracking-wider text-gray-700 font-medium h-full space-x-4'>
             {Navlinks.map((item) => (
@@ -82,13 +80,12 @@ const Header = () => {
               <li onClick={themeToggle} className='hover:animate-pulse text-2xl cursor-pointer'>{themeMode === 'light' ? <MdDarkMode/> :<MdLightMode className='text-purple-100 '/> } </li>
           </ul>
         </div>
+     
+     
+     
       </div>
-      
-      <div>
-
-      </div>
-
-    </div>
+    
+    </header>
     
   );
 };
