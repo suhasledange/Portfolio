@@ -32,7 +32,7 @@ const Card = ({ heading, TechStack, Img, para, git, live, liveText, year }) => {
           <h3 className='font-medium dark:text-gray-200 text-gray-800 text-md'>
             Technology : <span className='dark:text-gray-400 text-gray-700 text-sm italic'>{TechStack}</span>{' '}
           </h3>
-          <p className='text-gray-600 dark:text-gray-500'>{para}</p>
+          <p className='text-gray-600 text-justify dark:text-gray-500'>{para}</p>
         </div>
 
 
