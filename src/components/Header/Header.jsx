@@ -16,7 +16,8 @@ const Header = () => {
  }
 
 
-  const handleToggleMenu = () => {
+  const handleToggleMenu = (e) => {
+   e.stopPropagation();
     setMenuOpen(!menuOpen);
   };
 
