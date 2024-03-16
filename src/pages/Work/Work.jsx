@@ -64,8 +64,6 @@ const Work = () => {
             height="100%"
           />
 
-        
-        
           </div>
 
         </div>

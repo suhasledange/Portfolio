@@ -7,14 +7,15 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const Card = ({ heading, TechStack, Img, para, git, live, liveText, year }) => {
   return (
-    <div className='relative border dark:shadow-xl dark:drop-shadow-xl dark:border-gray-800 dark:bg-gray-800 bg-gray-50 rounded-md shadow-md pb-4 pt-2 cursor-pointer mx-auto w-[90%] md:w-full overflow-hidden group flex flex-col justify-between'>
+    <div className='relative border dark:shadow-xl dark:drop-shadow-xl dark:border-gray-800 dark:bg-gray-800 bg-gray-50 rounded-md shadow-md p-5 cursor-pointer mx-auto w-[90%] md:w-full overflow-hidden group flex flex-col justify-between'>
 
       <div className='absolute top-[0.6rem] left-3'>
         <h1 className='text-purple-600 text-md'>{year}</h1>
       </div>
 
-      <div className='p-3 md:p-5'>
-        <div className=' rounded-lg lg:w-full w-[90%] mx-auto h-[17rem] py-5 hover:scale-105 duration-300'>
+      <div className='mt-7'>
+        
+        <div className='rounded-lg py-2 mx-auto hover:scale-[102%] duration-300'>
           
           <LazyLoadImage
             className='dark:brightness-75 dark:contrast-125 bg-cover object-contain w-full h-full rounded-lg drop-shadow-xl'
@@ -37,7 +38,7 @@ const Card = ({ heading, TechStack, Img, para, git, live, liveText, year }) => {
 
       </div>
 
-      <div className=' ml-5 flex items-center space-x-5'>
+      <div className=' mt-5 flex justify-start space-x-5'>
         <a
           className='text-lg duration-200 text-purple-600 hover:text-purple-800 font-medium hover:underline underline-offset-2 flex items-center gap-1'
           href={git}
