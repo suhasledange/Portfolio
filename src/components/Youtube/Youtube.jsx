@@ -1,9 +1,9 @@
-import React, { Suspense, useCallback, useEffect, useState } from 'react';
+import React, { Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { fetchFromYoutube, fetchChannelYoutube } from '../../utils/api';
 import Loader from '../Loader/Loader';
 import YoutubeHead from './YoutubeHead';
+import YoutubeCard from './YoutubeCard'; // Assuming you have imported YoutubeCard
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
-import YoutubeCard from './YoutubeCard';
 
 const Youtube = () => {
   const [allVideos, setAllVideos] = useState([]);
@@ -11,6 +11,7 @@ const Youtube = () => {
   const [channelData, setChannelData] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
   const videosPerPage = 9;
+  const videosSectionRef = useRef(null);
 
   useEffect(() => {
     const fetchVideosAndChannelData = async () => {
@@ -36,6 +37,12 @@ const Youtube = () => {
 
     fetchVideosAndChannelData();
   }, []);
+
+  useEffect(() => {
+    if (videosSectionRef.current) {
+      videosSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [currentPage]);
 
   const totalPages = Math.ceil(allVideos.length / videosPerPage);
 
@@ -67,7 +74,7 @@ const Youtube = () => {
       {loading ? (
         <Loader />
       ) : (
-        <div id="videosSection" className='flex flex-wrap overflow-hidden'>
+        <div ref={videosSectionRef} className='flex flex-wrap overflow-hidden'>
           <Suspense fallback={<Loader />}>
             {currentVideos.length ? (
               currentVideos.map((video) => (
