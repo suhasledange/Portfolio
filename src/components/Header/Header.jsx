@@ -25,6 +25,8 @@ const Header = () => {
 
       <div className='flex px-3 justify-between items-center mx-auto max-w-screen-lg h-[4rem]  md:h-[4.5rem] relative'>
 
+    {/* mobile */}
+
       <div onClick={()=>setMenuOpen(false)} className={`${menuOpen ? "translate-x-0" : "translate-x-full"} absolute md:top-[4.5rem] top-16 bg-transparent w-full min-h-screen`}></div>
      
      <div
@@ -49,8 +51,8 @@ const Header = () => {
          </ul>
        </div>
         
+        {/* MOBIEL END */}
 
-        
         <div onClick={()=>setMenuOpen(false)}>
           <h1 className='dark:text-purple-100 cursor-pointer text-purple-700 font-bold text-2xl'>Suhas Ledange</h1>
         </div>
