@@ -51,7 +51,7 @@ const Contact = () => {
   return (
     <div className=' min-h-screen md:-mt-12 flex items-center justify-center px-3'>
 
-        <div className='max-w-screen-lg mx-auto p-5 dark:bg-gray-800 rounded-md shadow-xl'>
+        <div className='max-w-screen-lg mx-auto p-3 md:p-5 dark:bg-gray-800 rounded-md shadow-xl'>
             <h1 className=' text-4xl underline underline-offset-4 text-purple-700 font-bold text-center mb-10'>Get In Touch</h1>
         <div className=' flex md:flex-row gap-5 flex-col w-full h-full items-center justify-between'>
 
