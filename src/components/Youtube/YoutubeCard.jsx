@@ -22,12 +22,12 @@ const YoutubeCard = ({ title, link, publishedAt}) => {
   const Publish = formatDistanceToNow(dateObject, { addSuffix: true });
 
   return (
-    <div className='lg:px-0 px-3 mx-auto lg:w-auto md:w-auto w-full'>
+    <div className='mx-auto lg:w-auto md:w-auto w-full m-5'>
 
-    <div className='mx-auto bg-black p-3 lg:p-2 m-3 rounded-md'>
+    <div className='mx-auto bg-black p-3 rounded-md'>
     <div className='lg:w-72 md:w-80 w-full mx-auto mb-24 lg:h-40 md:h-44 h-44'>
 
-      <div className=' lg:w-full h-full'>
+      <div className='w-full h-full'>
 
         {!isPlayerReady && <div className='flex items-center justify-center bg-black w-full h-full'>
           <div className='animate-spin rounded-full border-t-2 border-b-2 border-purple-700 h-12 w-12'></div>
@@ -37,6 +37,7 @@ const YoutubeCard = ({ title, link, publishedAt}) => {
           style={playerStyle}
           width="100%"
           height="100%"
+          objectFit="contain"
           url={link}
           onReady={handlePlayerReady}
         />
