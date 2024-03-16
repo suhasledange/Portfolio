@@ -27,9 +27,9 @@ const YoutubeCard = ({ title, link, publishedAt}) => {
     <div className='mx-auto bg-black p-3 rounded-md'>
     <div className='lg:w-72 md:w-80 w-full mx-auto mb-24 lg:h-40 md:h-44 h-44'>
 
-      <div className='w-full h-full'>
+      <div className='w-full h-full overflow-hidden'>
 
-        {!isPlayerReady && <div className='flex items-center justify-center bg-black w-full h-full'>
+        {!isPlayerReady && <div className='flex items-center justify-center bg-black w-full h-full overflow-hidden '>
           <div className='animate-spin rounded-full border-t-2 border-b-2 border-purple-700 h-12 w-12'></div>
         </div>}
 
