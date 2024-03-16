@@ -54,10 +54,11 @@ const Header = () => {
         
         {/* MOBIEL END */}
 
-        <div onClick={()=>setMenuOpen(false)}>
+        <NavLink to="/" onClick={()=>setMenuOpen(false)}>
           
           <h1 className='dark:text-purple-100 cursor-pointer text-purple-700 font-bold text-2xl'>Suhas Ledange</h1>
-        </div>
+
+        </NavLink>
 
         
         <div className='md:hidden flex items-center justify-center'>
