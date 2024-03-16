@@ -21,7 +21,7 @@ const Header = () => {
   };
 
   return (
-    <header className='w-full bg-gray-50 dark:bg-gray-800 md:shadow-md shadow-sm dark:drop-shadow-md sticky top-0 z-30'>
+    <header className='w-full bg-gray-50 dark:bg-gray-800 md:shadow-md shadow-sm dark:drop-shadow-md sticky top-0 z-30 overflow-x-hidden'>
       <div onClick={()=>setMenuOpen(false)} className={`${menuOpen ? "translate-x-0" : "translate-x-full"} absolute md:top-[4.5rem] md:hidden top-16 bg-transparent w-full min-h-screen`}></div>
      
       <div
