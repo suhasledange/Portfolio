@@ -39,12 +39,6 @@ const Youtube = () => {
   }, []);
 
 
-  useEffect(() => {
-    if (videosSectionRef.current) {
-      videosSectionRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [currentPage]);
-
   const totalPages = Math.ceil(allVideos.length / videosPerPage);
   const paginate = useCallback((action) => {
     setCurrentPage((prevPage) => {
