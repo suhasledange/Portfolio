@@ -28,10 +28,10 @@ const Header = () => {
 
     {/* mobile */}
 
-      <div onClick={()=>setMenuOpen(false)} className={`${menuOpen ? "translate-x-0" : "translate-x-full w-0"} overflow-hidden md:hidden absolute md:top-[4.5rem] top-16 bg-transparent w-[90%] h-screen`}></div>
+      <div onClick={()=>setMenuOpen(false)} className={`${menuOpen ? "translate-x-0 w-[100%]" : "translate-x-full w-0"} overflow-hidden md:hidden absolute md:top-[4.5rem] top-16 bg-transparent  h-screen`}></div>
      
      <div
-         className={` ${menuOpen ? "translate-x-0" : "translate-x-full w-0"} overflow-hidden transform duration-200  md:hidden absolute bg-gray-50 border-t-2 dark:border-gray-800 border-gray-100 dark:bg-gray-800 w-[60%] h-screen md:top-[4.5rem] top-16 right-0 shadow-lg z-10 `}
+         className={` ${menuOpen ? "translate-x-0 w-[60%]" : "translate-x-full w-0"} overflow-hidden transform duration-200  md:hidden absolute bg-gray-50 border-t-2 dark:border-gray-800 border-gray-100 dark:bg-gray-800 h-screen md:top-[4.5rem] top-16 right-0 shadow-lg z-10 `}
        >
          
          <ul className=' tracking-wider text-lg flex flex-col gap-5 items-center pt-4'>
