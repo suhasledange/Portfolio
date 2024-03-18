@@ -55,7 +55,7 @@ const YoutubeHead = ({ subscribers, videoCount, viewCount }) => {
           viewCount ?            
             <p>Total Views : {viewCount}</p>
           :
-           <p className=' animate-pulse h-[8rem] md:h-[3rem] w-[12rem] md:w-[24rem] bg-gray-200 rounded-md'></p> 
+           <p className=' animate-pulse h-[8rem] md:h-[3rem] w-[10rem] md:w-[24rem] bg-gray-200 rounded-md'></p> 
         } 
       
       </div>
