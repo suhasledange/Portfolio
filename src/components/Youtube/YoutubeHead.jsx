@@ -37,30 +37,25 @@ const YoutubeHead = ({ subscribers, videoCount, viewCount }) => {
         
       <a className='font-bold tracking-wide text-2xl mb-3' href={"https://www.youtube.com/channel/UC1ynsuU6XPZ2iWw1Gf9SHlQ"} target='_blank' title="Visit My Channel">Bass Town</a>
       
-        <ul className='lg:w-auto w-[70%] flex flex-wrap items-center list-disc space-x-7'>
-          <span className='text-lg italic'>@basstown10</span>
+      { subscribers ?
 
-          {
-            subscribers ?
-            <li >{formatNumber(subscribers)} subscribers</li>
-            :
-           <li className='animate-pulse h-full w-32 bg-gray-200 rounded-md'></li> 
-        }  
+        <ul className='lg:w-auto w-[70%] flex flex-wrap items-center list-disc space-x-7'>
           
-          {
-            videoCount ?            
+          <span className='text-lg italic'>@basstown10</span>
+ 
+            <li >{formatNumber(subscribers)} subscribers</li>       
             <li>{videoCount} videos</li>
-            :
-           <li className='animate-pulse h-full w-[4.8rem] bg-gray-200 rounded-md'></li> 
-        }  
-        
+           
         </ul>
+        : ""
         
+      }
+
         {
           viewCount ?            
             <p>Total Views : {viewCount}</p>
           :
-           <p className='animate-pulse h-[1.4rem] w-[10rem] bg-gray-200 rounded-md'></p> 
+           <p className=' animate-pulse h-[8rem] md:h-[3rem] w-[12rem] md:w-[24rem] bg-gray-200 rounded-md'></p> 
         } 
       
       </div>

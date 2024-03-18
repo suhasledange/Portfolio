@@ -78,18 +78,14 @@ const Youtube = () => {
             <div className='grid gap-x-5' style={{gridTemplateColumns: 'repeat(auto-fill,minmax(320px,1fr)'}}>
 
           <Suspense fallback={<Loader />}>
-            {currentVideos.length ? (
-              currentVideos.map((video,idx) => (
+             {currentVideos?.map((video,idx) => (
                 <YoutubeCard
                   key={idx}
                   title={video.snippet.title}
                   publishedAt={video.snippet.publishedAt}
                   link={video.Videolink}
                 />
-              ))
-            ) : (
-              <h1 className='text-red-600 text-md mx-auto'>Api Limit Reached !</h1>
-            )}
+              ))}
           </Suspense>
         </div>
       )}
