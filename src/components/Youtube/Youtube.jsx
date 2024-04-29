@@ -68,13 +68,14 @@ const Youtube = () => {
         Youtube Channel
       </h1>
 
+
       <YoutubeHead 
-        subscribers={channelData.subscriberCount || 0}
-        videoCount={channelData.videoCount || 0}
-        viewCount={channelData.viewCount || 0}
+        subscribers={channelData?.subscriberCount || 0}
+        videoCount={channelData?.videoCount || 0}
+        viewCount={channelData?.viewCount || 0}
       />
 
-      {loading ? (
+      {!allVideos.length ? (
         <Loader />
       ) : (
             <div className='grid gap-x-5' style={{gridTemplateColumns: 'repeat(auto-fill,minmax(320px,1fr)'}}>
