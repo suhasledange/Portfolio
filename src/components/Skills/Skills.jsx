@@ -20,6 +20,8 @@ const Skills = () => {
           {name:"TailwindCSS",percentage:87},
           {name:"Bootstrap",percentage:71},
           {name:"ReactJS",percentage:83},
+          {name:"NextJS",percentage:78},
+
         ],
         icon:<MdOutlineWeb className='text-lg'/>},
         
