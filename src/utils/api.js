@@ -8,7 +8,7 @@ const options = {
     channelId: conf.ID,
     part: 'snippet,id',
     order: 'date',
-    maxResults: '50'
+    maxResults: '20'
   },
   headers: {
     'X-RapidAPI-Key': conf.API,
