@@ -1,8 +1,8 @@
-import React, { Suspense, useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { fetchFromYoutube, fetchChannelYoutube } from '../../utils/api';
 import Loader from '../Loader/Loader';
 import YoutubeHead from './YoutubeHead';
-import YoutubeCard from './YoutubeCard'; 
+import YoutubeCard from './YoutubeCard';
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 
 const Youtube = () => {
@@ -13,31 +13,35 @@ const Youtube = () => {
   const videosPerPage = 9;
   const videosSectionRef = useRef(null);
 
-  useEffect(() => {
-    const fetchVideosAndChannelData = async () => {
-      try {
-        const [videoData, channelData] = await Promise.all([
-          fetchFromYoutube(),
-          fetchChannelYoutube()
-        ]);
+  const fetchVideosAndChannelData = async () => {
+    try {
+      const [videoData, channelData] = await Promise.all([
+        fetchFromYoutube(),
+        fetchChannelYoutube()
+      ]);
 
+      if (videoData?.items) {
         const videos = videoData.items.map((video) => ({
           ...video,
           Videolink: `https://www.youtube.com/embed/${video.id.videoId}`,
         }));
-
         setAllVideos(videos);
-        setChannelData(channelData.items[0]?.statistics || {});
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching data from YouTube', error);
-        setLoading(false);
       }
-    };
 
+      if (channelData?.items) {
+        setChannelData(channelData.items[0]?.statistics || {});
+      }
+
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching data from YouTube', error);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
     fetchVideosAndChannelData();
   }, []);
-
 
   const totalPages = Math.ceil(allVideos.length / videosPerPage);
   const paginate = useCallback((action) => {
@@ -47,7 +51,6 @@ const Youtube = () => {
       }
       if (action === 'next' && prevPage < totalPages) {
         const nextPage = prevPage + 1;
-        setCurrentPage(nextPage);
         if (videosSectionRef.current) {
           videosSectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
@@ -65,31 +68,27 @@ const Youtube = () => {
   return (
     <div className='mx-auto'>
       <h1 ref={videosSectionRef} className='text-center font-bold text-purple-700 mb-20 text-2xl'>
-        Youtube Channel
+        YouTube Channel
       </h1>
 
-
-      <YoutubeHead 
+      <YoutubeHead
         subscribers={channelData?.subscriberCount || 0}
         videoCount={channelData?.videoCount || 0}
         viewCount={channelData?.viewCount || 0}
       />
 
-      {!allVideos.length ? (
+      {loading ? (
         <Loader />
       ) : (
-            <div className='grid gap-x-5' style={{gridTemplateColumns: 'repeat(auto-fill,minmax(320px,1fr)'}}>
-
-          <Suspense fallback={<Loader />}>
-             {currentVideos?.map((video,idx) => (
-                <YoutubeCard
-                  key={idx}
-                  title={video.snippet.title}
-                  publishedAt={video.snippet.publishedAt}
-                  link={video.Videolink}
-                />
-              ))}
-          </Suspense>
+        <div className='grid gap-x-5' style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))' }}>
+          {currentVideos.map((video, idx) => (
+            <YoutubeCard
+              key={idx}
+              title={video.snippet.title}
+              publishedAt={video.snippet.publishedAt}
+              link={video.Videolink}
+            />
+          ))}
         </div>
       )}
 
